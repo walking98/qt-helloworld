@@ -23,3 +23,9 @@ docker run -d \
   --name <命名容器名> \
   <镜像名字> 
 ```
+
+5. 相关的两个引用库在 lib.tar 包里面
+
+
+6. 在debian/目录下，是将两个库制作成.deb包的脚本，使用pkg_upload.py导入到apt repository.
+
