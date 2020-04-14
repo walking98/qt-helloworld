@@ -1,6 +1,6 @@
 Package: mylib-ext
 Version: 1.0
-Architecture: amd64
+Architecture: arm64
 Maintainer: Kevin Wang 
 Installed-Size: 128
 Recommends:
