@@ -7,10 +7,10 @@ ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 
 COPY sources.list /etc/apt/sources.list
-RUN apt update &&                  \
+RUN apt update --fix-missing &&                  \
     apt upgrade -y &&              \
     apt dist-upgrade -y &&         \
-    apt install -y  --no-install-recommends \
+    apt install -y --no-install-recommends \
         git                        \
         wget                       \
         xvfb                       \
@@ -27,8 +27,9 @@ RUN apt update &&                  \
         libx11-dev                 \
         libgl1-mesa-dev            \
         libudev-dev                \
-        qt5-default                \
-        qtbase5-private-dev      &&\
+        qt5-default qt5-qmltooling-plugins qtmultimedia5-dev qtdeclarative5-dev libqt5qml5 \
+        qtbase5-private-dev || echo "maybe apt install errors!"    &&\
+    apt update --fix-missing     &&\ 
     apt clean
 
 WORKDIR /home/root/

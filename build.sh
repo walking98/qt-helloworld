@@ -1,6 +1,6 @@
 cd /app/SRC
 # apt install free
-tar xvf lib.tar -C /usr
+#tar xvf lib.tar -C /usr
 qmake HelloWorldGui.pro
 make
 mkdir -p /app/bin/

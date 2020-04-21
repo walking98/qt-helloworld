@@ -4,7 +4,7 @@ MAINTAINER cetc15
 USER root
 COPY .  /home/HelloWorldGui
 WORKDIR /home/HelloWorldGui
-RUN tar xvf /home/HelloWorldGui/lib.tar -C /usr
+RUN apt install -y fcitx-frontend-qt5 && tar xvf /home/HelloWorldGui/lib.tar -C /usr
 RUN qmake HelloWorldGui.pro; make
 RUN chmod +x /home/HelloWorldGui/HelloWorldGui
 
